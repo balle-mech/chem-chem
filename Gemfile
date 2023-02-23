@@ -59,6 +59,8 @@ group :development, :test do
   gem 'rubocop', '~> 1.46', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'annotate' # https://github.com/ctran/annotate_models
+  gem 'bullet' # https://github.com/flyerhzm/bullet
 end
 
 group :development do
