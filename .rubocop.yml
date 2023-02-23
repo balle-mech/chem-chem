@@ -1,0 +1,9 @@
+# AllCopsオプションで全てのCopsを対象に
+AllCops:
+  NewCops: enable
+inherit_from:
+  - .rubocop.ruby.yml
+  - .rubocop.rails.yml
+
+require:
+  - rubocop-rspec
