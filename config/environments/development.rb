@@ -70,9 +70,9 @@ Rails.application.configure do
 
   # N+1問題の検知: https://github.com/flyerhzm/bullet#configuration
   config.after_initialize do
-    Bullet.enable = true #Bullet gemを有効
-    Bullet.bullet_logger = true #Bulletログファイルに記録
-    Bullet.rails_logger = true #警告を直接railsログに追加
+    Bullet.enable = true # Bullet gemを有効
+    Bullet.bullet_logger = true # Bulletログファイルに記録
+    Bullet.rails_logger = true # 警告を直接railsログに追加
     Bullet.raise = true
   end
 end
