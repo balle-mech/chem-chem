@@ -67,4 +67,12 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # N+1問題の検知: https://github.com/flyerhzm/bullet#configuration
+  config.after_initialize do
+    Bullet.enable = true #Bullet gemを有効
+    Bullet.bullet_logger = true #Bulletログファイルに記録
+    Bullet.rails_logger = true #警告を直接railsログに追加
+    Bullet.raise = true
+  end
 end
