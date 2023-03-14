@@ -45,7 +45,7 @@ jobs:
           bundle install --jobs 4 --retry 3 --path vendor/bundle
       - name: Database create and migrate
         run: |
-          cp config/database.yml.ci config/database.yml
+          cp config/database.yml.ci .github/workflows/database.yml
           bundle exec rails db:create RAILS_ENV=test
           bundle exec rails db:migrate RAILS_ENV=test
       - name: Run rubocop
