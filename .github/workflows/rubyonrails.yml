@@ -25,8 +25,10 @@ jobs:
     steps:
       - name: Show Docker containers
         run: docker ps -a
+
       - name: Show databases for root user
         run: mysql --protocol=tcp -h localhost -P 3306 -u root -proot_password -e "SHOW DATABASES"
+
       - name: Show databases for user1
         run: mysql --protocol=tcp -h localhost -P 3306 -u user1 -puser1_password -e "SHOW DATABASES"
 
@@ -43,11 +45,13 @@ jobs:
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3 --path vendor/bundle
+
       - name: Database create and migrate
         run: |
-          cp config/database.yml.ci .github/workflows/database.yml
+          cp .github/workflows/database.yml config/database.yml
           bundle exec rails db:create RAILS_ENV=test
           bundle exec rails db:migrate RAILS_ENV=test
+
       - name: Run rubocop
         run: bundle exec rubocop
 
