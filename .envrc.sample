@@ -1,5 +1,5 @@
 # MySQL
-export DATABASE_USERNAME='root'
-export DATABASE_PASSWORD='pass'
-export DATABASE_HOST='mysql'
+export DATABASE_USERNAME=''
+export DATABASE_PASSWORD=''
+export DATABASE_HOST=''
 
